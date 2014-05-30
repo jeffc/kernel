@@ -198,4 +198,3 @@ void init_video()
   clear_console();
   set_cursor(0,0);
 }
-
