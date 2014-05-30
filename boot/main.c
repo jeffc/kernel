@@ -7,17 +7,30 @@
  * @date 2014-05-24
  */
 
+#include <video/video.h>
+#include <util/debug.h>
+
+/**
+ * The main kernel entry point 
+ */
 void kernel_main()
 {
-  char* video = (char*)0xB8000; // start of video memory
-  for(int x = 0; x < 80; x++)
+  init_video();
+
+  //for(int x = 0; x < 25; x++)
+  //{
+  //  for(int c = 0; c < CONSOLE_WIDTH; c++)
+  //  {
+  //    put_char('A');
+  //  }
+  //}
+
+  for(int c = 0; c < CONSOLE_WIDTH; c++)
   {
-    for(int y = 0; y < 25; y++)
-    {
-      video[(80*y + x)*2] = ' ';
-      video[(80*y + x)*2 + 1] = 0x27;
-    }
+    put_char('B');
   }
+
+
 
   while(1);
 }

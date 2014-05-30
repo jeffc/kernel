@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -std=c99 -m32 -Wall -Werror -pedantic -g
+CFLAGS= -std=c99 -m32 -Wall -Werror -pedantic -g -I.
 ASM=as
 ASMFLAGS= --32
 LD=ld
