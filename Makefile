@@ -18,7 +18,7 @@ OBJECTS+=$(C_SOURCES:.c=.o)
 all: $(kernel_name)
 
 clean:
-	rm $(OBJECTS)
+	rm $(OBJECTS) $(kernel_name)
 
 run: $(kernel_name)
 	qemu-system-i386 -kernel $(kernel_name)
