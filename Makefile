@@ -13,7 +13,7 @@ C_SOURCES= $(shell find . -type f -name '*.c')
 OBJECTS= $(ASM_SOURCES:.S=.o)
 OBJECTS+=$(C_SOURCES:.c=.o)
 
-.PHONY: all clean run
+.PHONY: all clean run debug doc
 
 all: $(kernel_name)
 
@@ -26,6 +26,8 @@ run: $(kernel_name)
 debug: $(kernel_name)
 	qemu-system-i386 -s -S -kernel $(kernel_name)
 
+doc:
+	doxygen
 
 $(kernel_name) : $(OBJECTS)
 	echo $(OBJECTS)
