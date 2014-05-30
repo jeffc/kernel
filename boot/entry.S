@@ -11,8 +11,11 @@
 .extern kernel_main
 
 
-.section .text
+; // Multiboot section borrowed from 
+; // http://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel
+; // and tweaked based on osdev.org
 
+.section .multiboot
 multiboot_header:
   .align 4
 
@@ -21,6 +24,7 @@ multiboot_header:
   .long - (0x1BADB002 + 0x00)  /* checksum */
 
 
+.section .text
 x86_entry:
   cli
   call kernel_main
