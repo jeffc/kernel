@@ -8,6 +8,7 @@
  */
 
 #include <video/video.h>
+#include <video/raw_console.h>
 #include <util/debug.h>
 
 /**
@@ -17,20 +18,7 @@ void kernel_main()
 {
   init_video();
 
-  //for(int x = 0; x < 25; x++)
-  //{
-  //  for(int c = 0; c < CONSOLE_WIDTH; c++)
-  //  {
-  //    put_char('A');
-  //  }
-  //}
-
-  for(int c = 0; c < CONSOLE_WIDTH; c++)
-  {
-    put_char('B');
-  }
-
-
+  put_string("Hello, Jeff!\n");
 
   while(1);
 }
